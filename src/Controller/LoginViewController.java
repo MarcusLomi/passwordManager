@@ -23,6 +23,9 @@ public class LoginViewController {
 
     @FXML
     private TextField passwordField;
+    
+    @FXML
+    private Button createAccountButton;
 
     @FXML
     void submitUserName(ActionEvent event) {
