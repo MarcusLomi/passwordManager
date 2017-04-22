@@ -34,13 +34,6 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 		launch(args);
-		ArrayList<Account> user1Accounts = new ArrayList<Account>();
-		User user1 = new User("admin","pass","test3@gmail.com",user1Accounts);
-		ArrayList<Account> user2Accounts = new ArrayList<Account>();
-		User user2 = new User("admin2","pass","test3@gmail.com",user2Accounts);
-		ArrayList<Account> user3Accounts = new ArrayList<Account>();
-		User user3 = new User("admin3","pass","test3@gmail.com",user3Accounts);
-		
 		
 	}
 }
