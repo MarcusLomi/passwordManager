@@ -23,6 +23,10 @@ public class CreateAccountController {
     @FXML
     private Button createUserButton;
 
+    @FXML
+    void createUser(ActionEvent event) {
+
+    }
     
     public void start(Stage mainstage){
     	mainstage.setTitle("Create Account");
