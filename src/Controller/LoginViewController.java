@@ -2,6 +2,7 @@ package Controller;
 
 import java.io.IOException;
 
+import Controller.AccountViewController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,7 +33,7 @@ public class LoginViewController {
 				Parent root;
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/AccountView.fxml"));
 				root = loader.load();
-				stage =(Stage) loginButton.getScene().getWindow();
+				stage = (Stage)this.loginButton.getScene().getWindow();
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 				AccountViewController ac = loader.getController();
@@ -40,7 +41,6 @@ public class LoginViewController {
 				stage.show();
 				
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
     	}
@@ -48,7 +48,6 @@ public class LoginViewController {
     }
     
     public void start(Stage mainstage){
-  
     	mainstage.setTitle("Login");
     }
 
