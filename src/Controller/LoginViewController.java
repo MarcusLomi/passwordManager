@@ -28,6 +28,26 @@ public class LoginViewController {
     private Button createAccountButton;
 
     @FXML
+    void createAccount(ActionEvent event) {
+    	System.out.println("HI THERE");
+		try {
+			Stage stage;
+			Parent root;
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/CreateAccountView.fxml"));
+			root = loader.load();
+			stage = (Stage)this.createAccountButton.getScene().getWindow();
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			CreateAccountController ac = loader.getController();
+			ac.start(stage);
+			stage.show();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    @FXML
     void submitUserName(ActionEvent event) {
     	if(usernameField.getText().equals("marc")){
     		System.out.println("Logging into user marc");
@@ -36,7 +56,7 @@ public class LoginViewController {
 				Parent root;
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/AccountView.fxml"));
 				root = loader.load();
-				stage = (Stage)this.loginButton.getScene().getWindow();
+				stage = new Stage();
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 				AccountViewController ac = loader.getController();
@@ -52,6 +72,7 @@ public class LoginViewController {
     
     public void start(Stage mainstage){
     	mainstage.setTitle("Login");
+    	
     }
 
 }

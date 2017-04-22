@@ -2,6 +2,7 @@ package Controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class CreateAccountController {
 
@@ -17,5 +18,9 @@ public class CreateAccountController {
     @FXML
     private TextField emailTextField;
 
+    
+    public void start(Stage mainstage){
+    	mainstage.setTitle("Create Account");
+    }
 }
 
