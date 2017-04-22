@@ -1,6 +1,7 @@
 package Controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -18,6 +19,10 @@ public class CreateAccountController {
 
     @FXML
     private TextField emailTextField;
+    
+    @FXML
+    private Button createUserButton;
+
     
     public void start(Stage mainstage){
     	mainstage.setTitle("Create Account");
