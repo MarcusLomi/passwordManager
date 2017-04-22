@@ -1,6 +1,10 @@
 package application;
 	
+import java.util.ArrayList;
+
 import Controller.LoginViewController;
+import Model.Account;
+import Model.User;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
