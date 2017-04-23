@@ -11,11 +11,11 @@ public String getComments() {
 }
 @Override
 public String toString(){
-	String result = "Info";
-	result+=this.username+", ";
-	result+=this.password+", ";
-	result+=this.site+", ";
-	result+=this.comments+", ";
+	String result = "\n";
+	result+="Username:"+this.username+", ";
+	result+="Password:"+this.password+", ";
+	result+="Site:"+this.site+", ";
+	result+="Comments:"+this.comments;
 	return result;
 }
 

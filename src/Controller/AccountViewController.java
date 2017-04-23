@@ -1,5 +1,6 @@
 package Controller;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import Model.Account;
 import Model.User;
@@ -68,8 +69,14 @@ public class AccountViewController {
     }
     
     public void refreshColumns(){
+    	User mainU = Data.getInstance().getUser();
     	ObservableList<Account> accounts = FXCollections.observableArrayList();
-    	accounts.add(new Account("Nitr0m4n","test","test", "test"));
+    	ArrayList<Account> userAccounts = mainU.getAccounts();
+    	if(userAccounts.size()!=0){
+    		for(Account a: userAccounts){
+    			accounts.add(a);
+    		}
+    	}
     	mainTableView.setItems(accounts);
     	usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
     	siteColumn.setCellValueFactory(new PropertyValueFactory<>("site"));
