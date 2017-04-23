@@ -41,7 +41,12 @@ public class AccountViewController {
     private Button deleteSiteAccount;
 
     @FXML
-    private Button saveButton;
+    private Button refreshColumnButton;
+    
+    @FXML
+    void refreshAction(ActionEvent event) {
+    	refreshColumns();
+    }
     
     @FXML
     void openSiteAdder(ActionEvent event) {
@@ -66,6 +71,9 @@ public class AccountViewController {
     public void start(Stage mainstage){
     	mainstage.setTitle("View Accounts");
     	refreshColumns();
+    	mainTableView.setOnMouseClicked((e)->{
+    		refreshColumns();
+    	});
     }
     
     public void refreshColumns(){

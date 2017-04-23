@@ -44,7 +44,7 @@
                         <Insets top="10.0" />
                      </padding>
                   </Region>
-                  <Button fx:id="saveButton" mnemonicParsing="false" text="Save Changes">
+                  <Button fx:id="refreshColumnButton" mnemonicParsing="false" onAction="#refreshAction" text="Refresh Columns">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
