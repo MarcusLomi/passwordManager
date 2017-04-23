@@ -14,6 +14,13 @@ public User(String username, String password, String email, ArrayList<Account> a
 	this.accounts = accounts;
 }
 
+public User(){
+	this.username="default";
+	this.password="default";
+	this.email="default";
+	this.accounts=null;
+}
+
 public String getUsername() {
 	return username;
 }
