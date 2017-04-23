@@ -35,7 +35,11 @@ public class AddSiteAccountController {
 	    
 	    @FXML
 	    void submit(ActionEvent event) {
-
+	    	System.out.println("Submit button clicked");
+	    	System.out.println(comments.getText());
+	    	if(comments.getText()==""||password.getText()==""||site.getText()==""||username.getText()==""){		//User left a field empty
+	    		System.out.println("Please fill out all fields");
+	    	}
 	    }
 	    
 	    public void start(Stage mainstage){

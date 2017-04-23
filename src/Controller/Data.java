@@ -39,7 +39,7 @@ public class Data {
 	}
 	
 	/**
-	 * Gets the current state of the Users object for PhotoAlbum.
+	 * Gets the current state of the Users object for Password manager.
 	 * @return Pointer to the Users object.
 	 */
 	public User getUser() {
