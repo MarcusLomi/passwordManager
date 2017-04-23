@@ -13,28 +13,28 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class AddSiteAccountController {
-	  @FXML
-	    private TextField site;
 
-	    @FXML
-	    private TextField username;
+    @FXML
+    private TextField username;
 
-	    @FXML
-	    private PasswordField password;
+    @FXML
+    private PasswordField password;
 
-	    @FXML
-	    private TextField comments;
-	    
-	    @FXML
-	    private Button submitButton;
+    @FXML
+    private TextField site;
 
-	   // @FXML
-	    void addAccount(ActionEvent event) {
-	    	
-	    }
+    @FXML
+    private TextField comments;
+
+    @FXML
+    private Button submitButton;
+
+    @FXML
+    private Text addSiteTextMessage;
 	    
 	    @FXML
 	    void submit(ActionEvent event) {
@@ -44,7 +44,8 @@ public class AddSiteAccountController {
     		if(mainU.getAccounts()==null){
     			System.out.println("Accounts arraylist is null");
     		}
-    		mainU.addAccount(new Account("hey","fuck","this","shit"));
+    		
+    		mainU.addAccount(new Account(username.getText(),password.getText(),site.getText(),comments.getText()));
     		Data.getInstance().saveUsers();
 	    	
 	    	for(Account a: mainU.getAccounts()){
