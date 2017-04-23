@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,7 +20,7 @@ public class AddSiteAccountController {
 	    private TextField username;
 
 	    @FXML
-	    private TextField password;
+	    private PasswordField password;
 
 	    @FXML
 	    private TextField comments;
