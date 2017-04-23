@@ -54,12 +54,18 @@ public class AccountViewController {
 		} catch (IOException e) {
 			e.printStackTrace();
     	
-    	
-    }
+		}
     }
     
     public void start(Stage mainstage){
     	mainstage.setTitle("View Accounts");
+<<<<<<< HEAD
+=======
+    	refreshColumns();
+    }
+    
+    public void refreshColumns(){
+>>>>>>> 2b37d0e0351991282ceac5075058639260654bfe
     	ObservableList<Account> accounts = FXCollections.observableArrayList();
     	accounts.add(new Account("Nitr0m4n","test","gmail.com","test", ""));
     	
