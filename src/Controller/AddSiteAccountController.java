@@ -36,6 +36,7 @@ public class AddSiteAccountController {
 	    @FXML
 	    void submit(ActionEvent event) {
 	    	System.out.println("Submit button clicked");
+	    	
 	    }
 	    
 	    public void start(Stage mainstage){

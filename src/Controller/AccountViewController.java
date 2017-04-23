@@ -41,7 +41,7 @@ public class AccountViewController {
 			Parent root;
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/AddSiteView.fxml"));
 			root = loader.load();
-			stage = (Stage)this.addSiteAccountPass.getScene().getWindow();
+			stage = new Stage();
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			AddSiteAccountController ac = loader.getController();
