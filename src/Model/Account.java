@@ -19,6 +19,7 @@ public String toString(){
 	return result;
 }
 
+//comment
 public void setComments(String comments) {
 	this.comments = comments;
 }
