@@ -59,15 +59,12 @@ public class AccountViewController {
 		} catch (IOException e) {
 			e.printStackTrace();
     	
-    	
-    }
+		}
     }
     
     public void start(Stage mainstage){
     	mainstage.setTitle("View Accounts");
     	refreshColumns();
-    
-    
     }
     
     public void refreshColumns(){
