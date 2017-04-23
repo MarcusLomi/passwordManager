@@ -1,7 +1,10 @@
 package Controller;
 import java.io.IOException;
 
+import Model.Account;
 import Model.User;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -57,6 +60,8 @@ public class AccountViewController {
     
     public void start(Stage mainstage){
     	mainstage.setTitle("View Accounts");
+    	ObservableList<Account> accounts = FXCollections.observableArrayList();
+    	accounts.add(new Account("Nitr0m4n","test","gmail.com","test"));
     	
     }
 }
