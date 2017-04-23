@@ -38,7 +38,16 @@ public class AddSiteAccountController {
 	    
 	    @FXML
 	    void submit(ActionEvent event) {
+<<<<<<< HEAD
 	    	System.out.println("bitches"); 
+=======
+	    	System.out.println("bitches");
+	    	
+	    	
+	    	
+	    	
+	    	
+>>>>>>> c75c563c43fc64fdbc31610f18c8c931f9293730
 	    }
 	    
 	    public void start(Stage mainstage){
