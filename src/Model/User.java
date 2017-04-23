@@ -26,10 +26,17 @@ public User(){
 	this.password="default";
 	this.email="default";
 	this.accounts= new ArrayList<Account>();
+	if(this.accounts==null){
+		System.out.println("Error: null after initialization");
+	}
 }
 
 public String getUsername() {
 	return username;
+}
+
+public void addAccount(Account a){
+	this.accounts.add(a);
 }
 
 public void setUsername(String username) {

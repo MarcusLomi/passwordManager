@@ -38,7 +38,18 @@ public class AddSiteAccountController {
 	    
 	    @FXML
 	    void submit(ActionEvent event) {
-	    	System.out.println("bitches"); 
+	    	User mainU = Data.getInstance().getUser();
+	    	System.out.println(mainU.getName());
+	    	
+    		if(mainU.getAccounts()==null){
+    			System.out.println("Accounts arraylist is null");
+    		}
+    		mainU.addAccount(new Account("hey","fuck","this","shit"));
+    		Data.getInstance().saveUsers();
+	    	
+	    	for(Account a: mainU.getAccounts()){
+	    		System.out.print(a);
+	    	}
 	    }
 	    
 	    public void start(Stage mainstage){

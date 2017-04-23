@@ -69,12 +69,12 @@ public class AccountViewController {
     
     public void refreshColumns(){
     	ObservableList<Account> accounts = FXCollections.observableArrayList();
-    	accounts.add(new Account("Nitr0m4n","test","gmail.com","test", "test"));
+    	accounts.add(new Account("Nitr0m4n","test","test", "test"));
     	mainTableView.setItems(accounts);
     	usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
     	siteColumn.setCellValueFactory(new PropertyValueFactory<>("site"));
     	passwordColumn.setCellValueFactory(new PropertyValueFactory<>("password"));
-    	commentColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
+    	commentColumn.setCellValueFactory(new PropertyValueFactory<>("comments"));
     	for(Account a: accounts){
     		System.out.println(a.getUsername());
     	}
