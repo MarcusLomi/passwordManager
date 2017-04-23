@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class CreateAccountController {
@@ -33,12 +34,16 @@ public class CreateAccountController {
     private TextField emailTextField;
     
     @FXML
+    private Text noMatchPass;
+    
+    @FXML
     private Button createUserButton;
 
     @FXML
     void createUser(ActionEvent event) {
+    	
     	if(passWordField.getText().compareTo(confirmPasswordField.getText()) != 0){
-    		System.out.println("Passwords don't match, Re-enter passwords.");
+    		noMatchPass.setOpacity(1);
     	}
     	else{
     	ArrayList <Account> accounts = new ArrayList<Account>();

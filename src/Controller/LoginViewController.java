@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class LoginViewController {
@@ -25,6 +26,9 @@ public class LoginViewController {
 
     @FXML
     private PasswordField passField;
+    
+    @FXML
+    private Text wrongPassText;
     
     @FXML
     private Button createAccountButton;
@@ -51,14 +55,15 @@ public class LoginViewController {
     
     @FXML
     void submitUserName(ActionEvent event) {
-    	if(usernameField.getText().equals("marc")){
-    		System.out.println("Logging into user marc");
+    	if(usernameField.getText().compareTo(Data.getInstance().getUser().getName()) == 0){
+    		if(passField.getText().compareTo(Data.getInstance().getUser().getPassword()) == 0){
+    		System.out.println("Logging into:" + Data.getInstance().getUser().getName());
     		try {
 				Stage stage;
 				Parent root;
 				FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/AccountView.fxml"));
 				root = loader.load();
-				stage = new Stage();
+				stage = (Stage)this.loginButton.getScene().getWindow();
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
 				AccountViewController ac = loader.getController();
@@ -68,6 +73,13 @@ public class LoginViewController {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+    	}
+    		else{
+    			wrongPassText.setOpacity(1);
+    		}
+      }
+    	else{
+    		wrongPassText.setOpacity(1);
     	}
     	
     }
