@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 import Model.User;
 
 /**
- * @author Daniel Ayoub & Marcus Lomi
+ * @author Marcus Lomi & Brian Schillaci 
  * Singleton class for handling data storage / retrieval.
  */
 public class Data {

@@ -3,6 +3,7 @@ package Controller;
 import java.io.IOException;
 
 import Controller.AccountViewController;
+import Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -72,7 +73,10 @@ public class LoginViewController {
     
     public void start(Stage mainstage){
     	mainstage.setTitle("Login");
-    	
+    	User currentUser = Data.getInstance().getUser();
+    	if(currentUser!=null){
+    		System.out.println("Current user is" + currentUser.getName());
+    	}
     }
 
 }

@@ -1,13 +1,16 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User {
+public class User implements Serializable{
+private static final long serialVersionUID = 431709636391093399L;
 private String username, password, name, email, date_of_birth;
 
 private ArrayList<Account> accounts;
 
 public User(String username, String password, String email, ArrayList<Account> accounts){
+	this.name = username;
 	this.username = username;
 	this.password = password;
 	this.email = email;
@@ -15,6 +18,7 @@ public User(String username, String password, String email, ArrayList<Account> a
 }
 
 public User(){
+	this.name="Default";
 	this.username="default";
 	this.password="default";
 	this.email="default";

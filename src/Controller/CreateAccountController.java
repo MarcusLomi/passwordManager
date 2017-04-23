@@ -41,6 +41,7 @@ public class CreateAccountController {
     	else{
     	ArrayList <Account> accounts = new ArrayList<Account>();
     	User admin = new User(userTextField.getText(), passWordField.getText(), emailTextField.getText(), accounts);
+    	Data.getInstance().saveUsers();
     	System.out.println(admin.getUsername());
     	try {
 			Stage stage;

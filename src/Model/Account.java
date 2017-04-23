@@ -1,6 +1,9 @@
 package Model;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable{
+private static final long serialVersionUID = 487879453578974541L;
 private String username, password, email, site;
 
 public Account(String username, String password, String email, String site){
