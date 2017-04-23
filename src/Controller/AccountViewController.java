@@ -61,7 +61,7 @@ public class AccountViewController {
     public void start(Stage mainstage){
     	mainstage.setTitle("View Accounts");
     	ObservableList<Account> accounts = FXCollections.observableArrayList();
-    	accounts.add(new Account("Nitr0m4n","test","gmail.com","test"));
+    	accounts.add(new Account("Nitr0m4n","test","gmail.com","test", ""));
     	
     }
 }

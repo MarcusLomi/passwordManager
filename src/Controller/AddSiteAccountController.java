@@ -43,7 +43,6 @@ public class AddSiteAccountController {
 	    	Account temp = new Account(username.getText(),password.getText(),"",site.getText(), comments.getText());
 	    	ArrayList<Account> tempAccounts = currUser.getAccounts();
 	    	tempAccounts.add(temp);
-	    	
 	    }
 	    
 	    public void start(Stage mainstage){
