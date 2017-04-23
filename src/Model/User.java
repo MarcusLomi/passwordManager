@@ -44,6 +44,14 @@ public void setPassword(String password) {
 	this.password = password;
 }
 
+public ArrayList<Account> getAccounts() {
+	return accounts;
+}
+
+public void setAccounts(ArrayList<Account> accounts) {
+	this.accounts = accounts;
+}
+
 public String getName() {
 	return this.username;
 }

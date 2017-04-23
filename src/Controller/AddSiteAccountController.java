@@ -2,6 +2,8 @@ package Controller;
 
 import java.io.IOException;
 
+import Model.Account;
+import Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +37,13 @@ public class AddSiteAccountController {
 	    
 	    @FXML
 	    void submit(ActionEvent event) {
+	    	User currUser = Data.getInstance().getUser();
 	    	System.out.println("Submit button clicked");
+	    	Account e = new Account(username.getText(),password.getText(),comments.getText(),site.getText());
+	    	currUser.getAccounts().add(e);
+	    	for(Account a: currUser.getAccounts()){
+	    		System.out.println(a.getSite());
+	    	}
 	    	
 	    }
 	    
