@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class User implements Serializable{
 private static final long serialVersionUID = 431709636391093399L;
-private String username, password, name, email, date_of_birth;
+private String username, password, email, date_of_birth;
 public static User mainUser;
 
 private ArrayList<Account> accounts;
@@ -15,7 +15,6 @@ public static void setMainUser(User in){
 }
 
 public User(String username, String password, String email, ArrayList<Account> accounts){
-	this.name = username;
 	this.username = username;
 	this.password = password;
 	this.email = email;
@@ -23,7 +22,6 @@ public User(String username, String password, String email, ArrayList<Account> a
 }
 
 public User(){
-	this.name="Default";
 	this.username="default";
 	this.password="default";
 	this.email="default";
@@ -47,11 +45,11 @@ public void setPassword(String password) {
 }
 
 public String getName() {
-	return name;
+	return this.username;
 }
 
 public void setName(String name) {
-	this.name = name;
+	this.username = name;
 }
 
 public String getEmail() {
