@@ -38,10 +38,7 @@ public class AddSiteAccountController {
 	    
 	    @FXML
 	    void submit(ActionEvent event) {
-	    	User currUser = Data.getInstance().getUser();
-	    	System.out.println("Submit button clicked");
-	    	Account temp = new Account(username.getText(),password.getText(),"none",site.getText(), comments.getText());
-	    	currUser.getAccounts();
+	    	System.out.println("bitches");
 	    }
 	    
 	    public void start(Stage mainstage){
