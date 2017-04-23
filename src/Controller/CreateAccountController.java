@@ -1,10 +1,10 @@
 package Controller;
 
-import java.io.IOException;
-import java.util.ArrayList;
 
-import Model.Account;
-import Model.User;
+import java.util.ArrayList;
+import java.io.IOException;
+import java.util.*;
+import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
