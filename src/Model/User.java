@@ -14,12 +14,11 @@ public static void setMainUser(User in){
 	mainUser = in;
 }
 
-public User(String username, String password, String email, ArrayList<Account> accounts){
+public User(String username, String password, String email){
 	this.username = username;
 	this.password = password;
 	this.email = email;
-	this.accounts = accounts;
-	accounts= new ArrayList<Account>();
+	this.accounts = new ArrayList<Account>();
 }
 
 public User(){

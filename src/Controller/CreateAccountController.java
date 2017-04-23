@@ -46,15 +46,13 @@ public class CreateAccountController {
     		noMatchPass.setOpacity(1);
     	}
     	else{
-    	ArrayList <Account> accounts = new ArrayList<Account>();
-    	User admin = new User(userTextField.getText(), passWordField.getText(), emailTextField.getText(), accounts);
     	User mainU = Data.getInstance().getUser();			//get a reference to the main user so we can alter it. 
     	mainU.setName(userTextField.getText());
     	mainU.setUsername(userTextField.getText());
     	mainU.setPassword(passWordField.getText());
     	mainU.setEmail(emailTextField.getText());
     	Data.getInstance().saveUsers();
-    	System.out.println(admin.getUsername());
+    	System.out.println(mainU.getUsername());
     	try {
 			Stage stage;
 			Parent root;
