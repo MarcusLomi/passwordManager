@@ -65,15 +65,21 @@ public class AccountViewController {
     
     public void start(Stage mainstage){
     	mainstage.setTitle("View Accounts");
+    	refreshColumns();
+    
+    
+    }
+    
+    public void refreshColumns(){
     	ObservableList<Account> accounts = FXCollections.observableArrayList();
     	accounts.add(new Account("Nitr0m4n","test","gmail.com","test"));
+    	mainTableView.setItems(accounts);
+    	usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
+    	siteColumn.setCellValueFactory(new PropertyValueFactory<>("site"));
+    	passwordColumn.setCellValueFactory(new PropertyValueFactory<>("password"));
+    	commentColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
     	for(Account a: accounts){
     		System.out.println(a.getUsername());
     	}
-    	mainTableView.setItems(accounts);
-    	usernameColumn = new TableColumn<>("Username");
-    	usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
-    	mainTableView.getColumns().addAll(usernameColumn);
-    
     }
 }
