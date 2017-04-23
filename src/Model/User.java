@@ -26,7 +26,7 @@ public User(){
 	this.username="default";
 	this.password="default";
 	this.email="default";
-	this.accounts=null;
+	this.accounts= new ArrayList<Account>();
 }
 
 public String getUsername() {

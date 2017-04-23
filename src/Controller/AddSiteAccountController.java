@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import Model.Account;
 import Model.User;
@@ -39,11 +40,9 @@ public class AddSiteAccountController {
 	    void submit(ActionEvent event) {
 	    	User currUser = Data.getInstance().getUser();
 	    	System.out.println("Submit button clicked");
-	    	Account e = new Account(username.getText(),password.getText(),comments.getText(),site.getText());
-	    	currUser.getAccounts().add(e);
-	    	for(Account a: currUser.getAccounts()){
-	    		System.out.println(a.getSite());
-	    	}
+	    	Account temp = new Account(username.getText(),password.getText(),"",site.getText(), comments.getText());
+	    	ArrayList<Account> tempAccounts = currUser.getAccounts();
+	    	tempAccounts.add(temp);
 	    	
 	    }
 	    

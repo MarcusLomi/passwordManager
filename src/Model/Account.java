@@ -4,13 +4,22 @@ import java.io.Serializable;
 
 public class Account implements Serializable{
 private static final long serialVersionUID = 487879453578974541L;
-private String username, password, email, site;
+private String username, password, email, site, comments;
 
-public Account(String username, String password, String email, String site){
+public String getComments() {
+	return comments;
+}
+
+public void setComments(String comments) {
+	this.comments = comments;
+}
+
+public Account(String username, String password, String email, String site, String comments){
 	this.username = username;
 	this.password = password;
 	this.email = email;
 	this.site = site;
+	this.comments = comments;
 }
 
 public String getUsername() {
