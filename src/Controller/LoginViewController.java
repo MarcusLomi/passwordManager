@@ -73,9 +73,11 @@ public class LoginViewController {
     
     public void start(Stage mainstage){
     	mainstage.setTitle("Login");
+    
     	User currentUser = Data.getInstance().getUser();
+    	
     	if(currentUser!=null){
-    		System.out.println("Current user is" + currentUser.getName());
+    		System.out.println("Current user is " + currentUser.getName());
     	}
     }
 

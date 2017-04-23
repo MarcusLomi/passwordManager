@@ -6,8 +6,13 @@ import java.util.ArrayList;
 public class User implements Serializable{
 private static final long serialVersionUID = 431709636391093399L;
 private String username, password, name, email, date_of_birth;
+public static User mainUser;
 
 private ArrayList<Account> accounts;
+
+public static void setMainUser(User in){
+	mainUser = in;
+}
 
 public User(String username, String password, String email, ArrayList<Account> accounts){
 	this.name = username;

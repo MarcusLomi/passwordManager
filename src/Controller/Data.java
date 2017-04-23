@@ -68,6 +68,7 @@ public class Data {
     	File f = new File(USERS_FILE);
     	if (!f.exists()) {
     		user = new User();
+    		System.out.println("DNE");
     		saveUsers();
     		return;
     	}
