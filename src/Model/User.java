@@ -19,6 +19,7 @@ public User(String username, String password, String email, ArrayList<Account> a
 	this.password = password;
 	this.email = email;
 	this.accounts = accounts;
+	accounts= new ArrayList<Account>();
 }
 
 public User(){
