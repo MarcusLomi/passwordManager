@@ -12,21 +12,26 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class AccountViewController {
 
 	@FXML
-    private TableColumn<User,String> siteColumn;
+	private TableView<Account> mainTableView;
+
+	@FXML
+    private TableColumn<Account,String> siteColumn;
 
     @FXML
-    private TableColumn<User,String> usernameColumn;
+    private TableColumn<Account,String> usernameColumn;
 
     @FXML
-    private TableColumn<User, String> passwordColumn;
+    private TableColumn<Account, String> passwordColumn;
 
     @FXML
-    private TableColumn<User, String> commentColumn;
+    private TableColumn<Account, String> commentColumn;
 
     @FXML
     private Button addSiteAccountPass;
@@ -62,6 +67,13 @@ public class AccountViewController {
     	mainstage.setTitle("View Accounts");
     	ObservableList<Account> accounts = FXCollections.observableArrayList();
     	accounts.add(new Account("Nitr0m4n","test","gmail.com","test"));
-    	
+    	for(Account a: accounts){
+    		System.out.println(a.getUsername());
+    	}
+    	mainTableView.setItems(accounts);
+    	usernameColumn = new TableColumn<>("Username");
+    	usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
+    	mainTableView.getColumns().addAll(usernameColumn);
+    
     }
 }
