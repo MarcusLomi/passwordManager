@@ -74,6 +74,14 @@ public class AccountViewController {
     	mainTableView.setOnMouseClicked((e)->{
     		refreshColumns();
     	});
+    	deleteSiteAccount.setOnMouseClicked((e)->{
+    		int index = mainTableView.getSelectionModel().getSelectedIndex();
+    		User current = Data.getInstance().getUser();
+    		current.getAccounts().remove(index);
+    		Data.getInstance().saveUsers();
+    		refreshColumns();
+    	});
+    	
     }
     
     public void refreshColumns(){
