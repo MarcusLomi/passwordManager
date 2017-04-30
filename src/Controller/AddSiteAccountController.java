@@ -8,6 +8,7 @@ import Model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -35,7 +36,7 @@ public class AddSiteAccountController {
 
     @FXML
     private Text addSiteTextMessage;
-	    
+	   
     @FXML
     void submit(ActionEvent event) {
     	User mainU = Data.getInstance().getUser();
@@ -51,7 +52,8 @@ public class AddSiteAccountController {
     	for(Account a: mainU.getAccounts()){
     		System.out.print(a);
     	}
-    }
+    	(((Node) event.getSource())).getScene().getWindow().hide();
+    	}
     
     public void start(Stage mainstage){
     	mainstage.setTitle("Add new account");

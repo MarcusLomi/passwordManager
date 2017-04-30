@@ -22,7 +22,7 @@ public class Data {
 	private static Data data;
 	
 	private User user;
-	
+		
 	private Data() {
 		loadUsers();
 	}

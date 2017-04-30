@@ -20,19 +20,19 @@ import javafx.stage.Stage;
 public class AccountViewController {
 
 	@FXML
-	private TableView<Account> mainTableView;
+	public TableView<Account> mainTableView;
 
 	@FXML
-    private TableColumn<Account,String> siteColumn;
+    public TableColumn<Account,String> siteColumn;
 
     @FXML
-    private TableColumn<Account,String> usernameColumn;
+    public TableColumn<Account,String> usernameColumn;
 
     @FXML
-    private TableColumn<Account, String> passwordColumn;
+    public TableColumn<Account, String> passwordColumn;
 
     @FXML
-    private TableColumn<Account, String> commentColumn;
+    public TableColumn<Account, String> commentColumn;
 
     @FXML
     private Button addSiteAccountPass;
@@ -44,7 +44,7 @@ public class AccountViewController {
     private Button refreshColumnButton;
     
     @FXML
-    void refreshAction(ActionEvent event) {
+    public void refreshAction(ActionEvent event) {
     	refreshColumns();
     }
     
@@ -61,7 +61,6 @@ public class AccountViewController {
 			AddSiteAccountController ac = loader.getController();
 			ac.start(stage);
 			stage.show();
-			
 		} catch (IOException e) {
 			e.printStackTrace();
     	
