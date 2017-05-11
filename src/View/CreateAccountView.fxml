@@ -12,11 +12,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="267.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CreateAccountController">
+<AnchorPane prefHeight="222.0" prefWidth="346.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CreateAccountController">
    <children>
-      <BorderPane layoutX="-173.0" layoutY="-137.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane layoutX="-173.0" layoutY="-137.0" prefHeight="267.0" prefWidth="448.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <VBox prefHeight="207.0" prefWidth="303.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="167.0" prefWidth="216.0" BorderPane.alignment="CENTER">
                <children>
                   <TextField fx:id="userTextField" promptText="Username">
                      <VBox.margin>
@@ -38,12 +38,12 @@
                         <Insets bottom="5.0" />
                      </VBox.margin>
                   </TextField>
-                  <Text fx:id="noMatchPass" fill="#f81414" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwords don't match." />
-                  <HBox prefHeight="53.0" prefWidth="129.0">
+                  <Text fx:id="noMatchPass" fill="#f81414" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passwords don't match." wrappingWidth="124.775390625" />
+                  <HBox prefHeight="36.0" prefWidth="216.0">
                      <children>
-                        <Button fx:id="createUserButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#createUser" text="Create" textAlignment="CENTER">
+                        <Button fx:id="createUserButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#createUser" prefHeight="25.0" prefWidth="127.0" text="Create" textAlignment="CENTER">
                            <HBox.margin>
-                              <Insets left="120.0" top="10.0" />
+                              <Insets left="125.0" top="10.0" />
                            </HBox.margin>
                         </Button>
                      </children>
@@ -55,7 +55,7 @@
             </VBox>
          </center>
          <right>
-            <Region prefHeight="156.0" prefWidth="80.0" BorderPane.alignment="CENTER" />
+            <Region prefHeight="225.0" prefWidth="65.0" BorderPane.alignment="CENTER" />
          </right>
          <left>
             <Region prefHeight="156.0" prefWidth="65.0" BorderPane.alignment="CENTER" />
@@ -67,6 +67,9 @@
                </font>
             </Text>
          </top>
+         <bottom>
+            <Region prefHeight="16.0" prefWidth="346.0" BorderPane.alignment="CENTER" />
+         </bottom>
       </BorderPane>
    </children>
 </AnchorPane>
