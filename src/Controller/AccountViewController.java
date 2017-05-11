@@ -44,6 +44,9 @@ public class AccountViewController {
     private Button refreshColumnButton;
     
     @FXML
+    private Button logoutButton;
+    
+    @FXML
     public void refreshAction(ActionEvent event) {
     	refreshColumns();
     }
@@ -73,12 +76,36 @@ public class AccountViewController {
     	mainTableView.setOnMouseClicked((e)->{
     		refreshColumns();
     	});
+    	
     	deleteSiteAccount.setOnMouseClicked((e)->{
     		int index = mainTableView.getSelectionModel().getSelectedIndex();
-    		User current = Data.getInstance().getUser();
-    		current.getAccounts().remove(index);
-    		Data.getInstance().saveUsers();
-    		refreshColumns();
+    		if(index!=-1){
+    			User current = Data.getInstance().getUser();
+	    		current.getAccounts().remove(index);
+	    		Data.getInstance().saveUsers();
+	    		refreshColumns();
+    		}
+    		
+    	});
+    	
+    	logoutButton.setOnMouseClicked((e)->{
+    		Data.getInstance().saveUsers();			//Save changes before logging out
+    		try {
+				Stage stage;
+				Parent root;
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/LoginView.fxml"));
+				root = loader.load();
+				stage = (Stage)this.logoutButton.getScene().getWindow();
+				Scene scene = new Scene(root);
+				stage.setScene(scene);
+				LoginViewController lc = loader.getController();
+				lc.start(stage);
+				stage.show();
+				System.out.println("User has been logged out");
+				
+			} catch (IOException i) {
+				i.printStackTrace();
+			}
     	});
     	
     }
