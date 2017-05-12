@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="267.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminViewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="336.0" prefWidth="267.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminViewController">
    <children>
       <BorderPane layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -23,7 +22,7 @@
             <HBox prefHeight="22.0" prefWidth="267.0" BorderPane.alignment="CENTER">
                <children>
                   <Region prefHeight="35.0" prefWidth="21.0" HBox.hgrow="ALWAYS" />
-                  <Button fx:id="logoutButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" text="Logout">
+                  <Button fx:id="logoutButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="106.0" text="Logout">
                      <HBox.margin>
                         <Insets bottom="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -39,7 +38,7 @@
                         <Insets bottom="5.0" left="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="deleteUserButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Delete User">
+                  <Button fx:id="deleteUserButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="98.0" text="Delete User">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" />
                      </HBox.margin>

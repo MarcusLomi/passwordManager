@@ -55,32 +55,53 @@ public class LoginViewController {
     
     @FXML
     void submitUserName(ActionEvent event) {
-    	if(usernameField.getText().compareTo(Data.getInstance().getUser().getName()) == 0){
-    		if(passField.getText().compareTo(Data.getInstance().getUser().getPassword()) == 0){
-    		System.out.println("Logging into:" + Data.getInstance().getUser().getName());
-    		try {
+    	if(usernameField.getText().compareTo("admin")==0){
+    		try//to set up the stage 
+			{
 				Stage stage;
 				Parent root;
-				FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/AccountView.fxml"));
+				FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/AdminView.fxml"));
 				root = loader.load();
 				stage = (Stage)this.loginButton.getScene().getWindow();
 				Scene scene = new Scene(root);
 				stage.setScene(scene);
-				AccountViewController ac = loader.getController();
+				AdminViewController ac = loader.getController();
 				ac.start(stage);
 				stage.show();
 				
-			} catch (IOException e) {
+			}catch (IOException e) {
 				e.printStackTrace();
 			}
     	}
+    	else if(usernameField.getText().compareTo(Data.getInstance().getUser().getName()) == 0)
+    	{//If the username is the same
+			if(passField.getText().compareTo(Data.getInstance().getUser().getPassword()) == 0)
+			{	//If the password is the same
+				System.out.println("Logging into:" + Data.getInstance().getUser().getName());
+				try//to set up the stage 
+				{
+					Stage stage;
+					Parent root;
+					FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/AccountView.fxml"));
+					root = loader.load();
+					stage = (Stage)this.loginButton.getScene().getWindow();
+					Scene scene = new Scene(root);
+					stage.setScene(scene);
+					AccountViewController ac = loader.getController();
+					ac.start(stage);
+					stage.show();
+					
+				}catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
     		else{
     			wrongPassText.setOpacity(1);
     		}
       }
-    	else{
-    		wrongPassText.setOpacity(1);
-    	}
+		else{
+			wrongPassText.setOpacity(1);
+		}
     	
     }
     
