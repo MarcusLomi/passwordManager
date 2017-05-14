@@ -46,6 +46,8 @@ public class AccountViewController {
     @FXML
     private Button logoutButton;
     
+    private User currentUser;
+    
     @FXML
     public void refreshAction(ActionEvent event) {
     	refreshColumns();
@@ -62,6 +64,7 @@ public class AccountViewController {
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			AddSiteAccountController ac = loader.getController();
+			ac.setCurrentUser(this.currentUser);
 			ac.start(stage);
 			stage.show();
 		} catch (IOException e) {
@@ -80,8 +83,8 @@ public class AccountViewController {
     	deleteSiteAccount.setOnMouseClicked((e)->{
     		int index = mainTableView.getSelectionModel().getSelectedIndex();
     		if(index!=-1){
-    			User current = Data.getInstance().getUser();
-	    		current.getAccounts().remove(index);
+    			
+	    		currentUser.getAccounts().remove(index);
 	    		Data.getInstance().saveUsers();
 	    		refreshColumns();
     		}
@@ -111,9 +114,12 @@ public class AccountViewController {
     }
     
     public void refreshColumns(){
-    	User mainU = Data.getInstance().getUser();
+    	
     	ObservableList<Account> accounts = FXCollections.observableArrayList();
-    	ArrayList<Account> userAccounts = mainU.getAccounts();
+    	if(currentUser==null){
+    		System.out.println("FUCK");
+    	}
+    	ArrayList<Account> userAccounts = currentUser.getAccounts();
     	if(userAccounts.size()!=0){
     		for(Account a: userAccounts){
     			accounts.add(a);
@@ -127,6 +133,10 @@ public class AccountViewController {
     	for(Account a: accounts){
     		System.out.println(a.getUsername());
     	}
-    	//For brian
+    	
     }
+    public void setCurrentUser(User u){
+    	this.currentUser=u;
+    }
+    
 }

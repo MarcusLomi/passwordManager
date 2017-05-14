@@ -37,19 +37,21 @@ public class AddSiteAccountController {
     @FXML
     private Text addSiteTextMessage;
 	   
+    private User currentUser;
+    
     @FXML
     void submit(ActionEvent event) {
-    	User mainU = Data.getInstance().getUser();
-    	System.out.println(mainU.getName());
     	
-		if(mainU.getAccounts()==null){
+    	System.out.println(currentUser.getName());
+    	
+		if(currentUser.getAccounts()==null){
 			System.out.println("Accounts arraylist is null");
 		}
 		
-		mainU.addAccount(new Account(username.getText(),password.getText(),site.getText(),comments.getText()));
+		currentUser.addAccount(new Account(username.getText(),password.getText(),site.getText(),comments.getText()));
 		Data.getInstance().saveUsers();
     	
-    	for(Account a: mainU.getAccounts()){
+    	for(Account a: currentUser.getAccounts()){
     		System.out.print(a);
     	}
     	(((Node) event.getSource())).getScene().getWindow().hide();
@@ -57,5 +59,9 @@ public class AddSiteAccountController {
     
     public void start(Stage mainstage){
     	mainstage.setTitle("Add new account");
+    }
+    
+    public void setCurrentUser(User u){
+    	this.currentUser=u;
     }
 }

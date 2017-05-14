@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import Controller.AccountViewController;
 import Model.User;
+import Model.Users;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,7 +36,6 @@ public class LoginViewController {
 
     @FXML
     void createAccount(ActionEvent event) {
-    	System.out.println("HI THERE");
 		try {
 			Stage stage;
 			Parent root;
@@ -55,6 +55,32 @@ public class LoginViewController {
     
     @FXML
     void submitUserName(ActionEvent event) {
+    	User validUser;
+    	Users userList = Data.getInstance().getUsers();
+    	for(User u: userList.users){
+    		if(u.getUsername().compareTo(usernameField.getText())==0){
+    			if(u.getUsername().compareTo(passField.getText())==0){
+        			validUser = u;
+    				try//to set up the stage 
+    				{
+    					Stage stage;
+    					Parent root;
+    					FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/AccountView.fxml"));
+    					root = loader.load();
+    					stage = (Stage)this.loginButton.getScene().getWindow();
+    					Scene scene = new Scene(root);
+    					stage.setScene(scene);
+    					AccountViewController ac = loader.getController();
+    					ac.setCurrentUser(validUser);
+    					ac.start(stage);
+    					stage.show();
+    					
+    				}catch (IOException e) {
+    					e.printStackTrace();
+    				}
+        		}
+    		}
+    	}
     	if(usernameField.getText().compareTo("admin")==0){
     		try//to set up the stage 
 			{
@@ -73,32 +99,8 @@ public class LoginViewController {
 				e.printStackTrace();
 			}
     	}
-    	else if(usernameField.getText().compareTo(Data.getInstance().getUser().getName()) == 0)
-    	{//If the username is the same
-			if(passField.getText().compareTo(Data.getInstance().getUser().getPassword()) == 0)
-			{	//If the password is the same
-				System.out.println("Logging into:" + Data.getInstance().getUser().getName());
-				try//to set up the stage 
-				{
-					Stage stage;
-					Parent root;
-					FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/AccountView.fxml"));
-					root = loader.load();
-					stage = (Stage)this.loginButton.getScene().getWindow();
-					Scene scene = new Scene(root);
-					stage.setScene(scene);
-					AccountViewController ac = loader.getController();
-					ac.start(stage);
-					stage.show();
-					
-				}catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-    		else{
-    			wrongPassText.setOpacity(1);
-    		}
-      }
+ 
+      
 		else{
 			wrongPassText.setOpacity(1);
 		}
@@ -107,12 +109,7 @@ public class LoginViewController {
     
     public void start(Stage mainstage){
     	mainstage.setTitle("Login");
-    
-    	User currentUser = Data.getInstance().getUser();
     	
-    	if(currentUser!=null){
-    		System.out.println("Current user is " + currentUser.getName());
-    	}
     }
 
 }

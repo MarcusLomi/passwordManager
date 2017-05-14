@@ -10,6 +10,7 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 
 import Model.User;
+import Model.Users;
 
 /**
  * @author Marcus Lomi & Brian Schillaci 
@@ -21,7 +22,7 @@ public class Data {
 	
 	private static Data data;
 	
-	private User user;
+	private Users users;
 		
 	private Data() {
 		loadUsers();
@@ -42,8 +43,8 @@ public class Data {
 	 * Gets the current state of the Users object for Password manager.
 	 * @return Pointer to the Users object.
 	 */
-	public User getUser() {
-		return user;
+	public Users getUsers() {
+		return users;
 	}
 	
 	/**
@@ -56,7 +57,7 @@ public class Data {
 			pw.close(); // Empty out existing file
 			FileOutputStream outFile = new FileOutputStream(USERS_FILE);
 			ObjectOutputStream out = new ObjectOutputStream(outFile);
-			out.writeObject(user);
+			out.writeObject(users);
 			out.close();
 //			this.users = users;
 		} catch (IOException e) {
@@ -67,7 +68,7 @@ public class Data {
 	private void loadUsers() {
     	File f = new File(USERS_FILE);
     	if (!f.exists()) {
-    		user = new User();
+    		users = new Users();
     		System.out.println("DNE");
     		saveUsers();
     		return;
@@ -75,10 +76,10 @@ public class Data {
     	try {
     		FileInputStream inFile = new FileInputStream(f);
 			ObjectInputStream in = new ObjectInputStream(inFile);
-			User users = (User) in.readObject();
+			Users users = (Users) in.readObject();
 			in.close();
 			inFile.close();
-			this.user = users;
+			this.users = users;
 			return;
 		} catch (IOException | ClassNotFoundException e) {
 			e.printStackTrace();

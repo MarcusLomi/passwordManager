@@ -46,13 +46,12 @@ public class CreateAccountController {
     		noMatchPass.setOpacity(1);
     	}
     	else{
-    	User mainU = Data.getInstance().getUser();			//get a reference to the main user so we can alter it. 
-    	mainU.setName(userTextField.getText());
-    	mainU.setUsername(userTextField.getText());
-    	mainU.setPassword(passWordField.getText());
-    	mainU.setEmail(emailTextField.getText());
+    	Users userList = Data.getInstance().getUsers();			//get a reference to the main user so we can alter it. 
+    	User newU = new User(userTextField.getText(),passWordField.getText(),emailTextField.getText());
+    	userList.addUser(newU);
+    	
     	Data.getInstance().saveUsers();
-    	System.out.println(mainU.getUsername());
+    	System.out.println(newU.getUsername());
     	try {
 			Stage stage;
 			Parent root;
@@ -62,7 +61,9 @@ public class CreateAccountController {
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			AccountViewController ac = loader.getController();
+			ac.setCurrentUser(newU);
 			ac.start(stage);
+		
 			stage.show();
 			
 		} catch (IOException e) {
