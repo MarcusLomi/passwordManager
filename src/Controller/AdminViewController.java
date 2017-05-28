@@ -35,6 +35,7 @@ public class AdminViewController {
     	getAllUsers();
     	refreshList();
     	
+    	/*Handles the event for logging out the administrator*/
     	logoutButton.setOnMouseClicked((e)->{
     		Data.getInstance().saveUsers();			//Save changes before logging out
     		try {
@@ -55,6 +56,38 @@ public class AdminViewController {
 			}
     	});
     	
+    	/*Handles event for deleting a user*/
+    	deleteUserButton.setOnMouseClicked((e)->{
+    		int selectedIndex = userListView.getSelectionModel().getSelectedIndex();
+    		if(selectedIndex!=-1){
+    			System.out.println("Deleting user " + this.users.users.get(selectedIndex).getName());
+    			this.users.users.remove(selectedIndex);
+    			Data.getInstance().saveUsers();
+    			getAllUsers();
+    			refreshList();
+    			userListView.getSelectionModel().clearSelection();
+    		}
+    	});
+    	
+    	/*Handles creating a new user account from the admin control screen*/
+    	addUserButton.setOnMouseClicked((e)->{
+    		try {
+    			Stage stage;
+    			Parent root;
+    			FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/CreateAccountView.fxml"));
+    			root = loader.load();
+    			stage = new Stage();
+    			Scene scene = new Scene(root);
+    			stage.setScene(scene);
+    			CreateAccountController ac = loader.getController();
+    			ac.start(stage);
+    			stage.show();
+    			
+    		} catch (IOException f) {
+    			f.printStackTrace();
+    		}
+    	});
+    	
     }
     
     /**
@@ -62,7 +95,6 @@ public class AdminViewController {
      * */
     public void getAllUsers(){
     	this.users = Data.getInstance().getUsers();
-    	
     }
     
     public void refreshList(){
