@@ -59,7 +59,7 @@ public class LoginViewController {
     	Users userList = Data.getInstance().getUsers();
     	for(User u: userList.users){
     		if(u.getUsername().compareTo(usernameField.getText())==0){
-    			if(u.getUsername().compareTo(passField.getText())==0){
+    			if(u.getPassword().compareTo(passField.getText())==0){
         			validUser = u;
     				try//to set up the stage 
     				{
