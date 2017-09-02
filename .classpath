@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Brian/Desktop/javax.mail.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Brian/Desktop/jaf-1.1.1/activation.jar"/>
+	<classpathentry kind="lib" path="/Users/bschillaci25/Desktop/activation.jar"/>
+	<classpathentry kind="lib" path="/Users/bschillaci25/Desktop/javax.mail.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
