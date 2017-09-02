@@ -102,14 +102,10 @@ public class LoginViewController {
 				e.printStackTrace();
 			}
     	}
- 
-      
-		else{
+      	else{
 			wrongPassText.setOpacity(1);
-		}
-    	
+		}	
     }
-    
     
     @FXML
     void forgotPassword(ActionEvent event) {
@@ -118,7 +114,7 @@ public class LoginViewController {
 			Parent root;
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/ForgotPasswordView.fxml"));
 			root = loader.load();
-			stage = (Stage)this.createAccountButton.getScene().getWindow();
+			stage = (Stage)this.forgotPasswordButton.getScene().getWindow();
 			Scene scene = new Scene(root);
 			stage.setScene(scene);
 			ForgotPasswordViewController fc = loader.getController();
