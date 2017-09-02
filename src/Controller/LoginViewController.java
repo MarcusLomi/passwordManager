@@ -33,6 +33,9 @@ public class LoginViewController {
     
     @FXML
     private Button createAccountButton;
+    
+    @FXML
+    private Button forgotPasswordButton;
 
     @FXML
     void createAccount(ActionEvent event) {
@@ -107,6 +110,27 @@ public class LoginViewController {
     	
     }
     
+    
+    @FXML
+    void forgotPassword(ActionEvent event) {
+    	try {
+			Stage stage;
+			Parent root;
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/ForgotPasswordView.fxml"));
+			root = loader.load();
+			stage = (Stage)this.createAccountButton.getScene().getWindow();
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			ForgotPasswordViewController fc = loader.getController();
+			fc.start(stage);
+			stage.show();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+   
     public void start(Stage mainstage){
     	mainstage.setTitle("Login");
     	
