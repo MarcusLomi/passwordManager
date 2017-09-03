@@ -44,6 +44,9 @@ public class AccountViewController {
     private Button refreshColumnButton;
     
     @FXML
+    private Button changePassButton;
+    
+    @FXML
     private Button logoutButton;
     
     private User currentUser;
@@ -51,6 +54,10 @@ public class AccountViewController {
     @FXML
     public void refreshAction(ActionEvent event) {
     	refreshColumns();
+    }
+    
+    public void setCurrentUser(User u){
+    	this.currentUser=u;
     }
     
     @FXML
@@ -70,6 +77,26 @@ public class AccountViewController {
 		} catch (IOException e) {
 			e.printStackTrace();
     	
+		}
+    }
+    
+    @FXML
+    void changePass(ActionEvent event) {
+    	try {
+			Stage stage;
+			Parent root;
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/View/ChangePassView.fxml"));
+			root = loader.load();
+			stage = (Stage)this.changePassButton.getScene().getWindow();
+			Scene scene = new Scene(root);
+			stage.setScene(scene);
+			ChangePassViewController fc = loader.getController();
+			fc.setCurrentUser(this.currentUser);
+			fc.start(stage);
+			stage.show();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
     }
     
@@ -117,7 +144,7 @@ public class AccountViewController {
     	
     	ObservableList<Account> accounts = FXCollections.observableArrayList();
     	if(currentUser==null){
-    		System.out.println("FUCK");
+    		System.out.println("null");
     	}
     	ArrayList<Account> userAccounts = currentUser.getAccounts();
     	if(userAccounts.size()!=0){
@@ -134,9 +161,6 @@ public class AccountViewController {
     		System.out.println(a.getUsername());
     	}
     	
-    }
-    public void setCurrentUser(User u){
-    	this.currentUser=u;
     }
     
 }

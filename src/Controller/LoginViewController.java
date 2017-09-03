@@ -36,6 +36,7 @@ public class LoginViewController {
     
     @FXML
     private Button forgotPasswordButton;
+    
 
     @FXML
     void createAccount(ActionEvent event) {

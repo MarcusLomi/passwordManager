@@ -37,6 +37,11 @@
                         <Insets bottom="10.0" />
                      </HBox.margin>
                   </Button>
+                  <Button fx:id="changePassButton" minWidth="-Infinity" mnemonicParsing="false" onAction="#changePass" prefHeight="27.0" prefWidth="132.0" text="Change Password">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" />
+                     </HBox.margin>
+                  </Button>
                   <Button fx:id="logoutButton" minWidth="-Infinity" mnemonicParsing="false" prefHeight="27.0" prefWidth="69.0" text="Logout">
                      <HBox.margin>
                         <Insets left="150.0" />
