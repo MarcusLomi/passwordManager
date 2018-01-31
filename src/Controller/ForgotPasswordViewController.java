@@ -46,8 +46,8 @@ public class ForgotPasswordViewController {
     		if(u.getEmail().compareTo(email)==0){
     			valid = 1;
     			
-    			final String username = "testpassmanager24@gmail.com";
-    			final String password = "test24!!";
+    			final String username = "INSERT YOUR EMAIL USERNAME HERE"
+    			final String password = "INSERT YOUR EMAIL PASS HERE"
 
     			Properties props = new Properties();
     			props.put("mail.smtp.auth", "true");
@@ -65,7 +65,7 @@ public class ForgotPasswordViewController {
     			try {
 
     				Message message = new MimeMessage(session);
-    				message.setFrom(new InternetAddress("testpassmanager24@gmail.com"));
+    				message.setFrom(new InternetAddress("INSERT EMAIL HERE");
     				message.setRecipients(Message.RecipientType.TO,
     					InternetAddress.parse(email));
     				message.setSubject("Password Manager: Reset Password");
